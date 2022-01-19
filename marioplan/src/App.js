@@ -1,10 +1,21 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from "./components/layout/Navbar"
+import Dashboard from './components/dashboard/Dashboard'
+import ProjectDetails from './components/projects/ProjectDetails';
 
+
+/* 
+  Route means when user loads '/' then load in Dashboard inside the app
+*/
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <h1>MarioPlan</h1>
+        <Navbar />
+        <Routes>
+          <Route exact path='/' element={ <Dashboard /> } /> 
+          <Route path='/project/:id' element={ <ProjectDetails/> } />
+        </Routes>
       </div>
     </BrowserRouter>
     );
