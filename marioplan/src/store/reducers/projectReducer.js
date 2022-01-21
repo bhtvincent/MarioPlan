@@ -18,3 +18,4 @@ export default projectReducer;
 
 
 //npm install redux-thunk
+//npm install firebase
